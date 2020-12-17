@@ -1,5 +1,5 @@
-import { AppBar, Chip, makeStyles, Typography } from '@material-ui/core';
-import { Done, Face, WhatsApp } from '@material-ui/icons';
+import { AppBar, Typography } from '@material-ui/core';
+import { Mood, WhatsApp } from '@material-ui/icons';
 import React, { useCallback, useState } from 'react';
 import XLSX from 'xlsx';
 import {
@@ -15,6 +15,7 @@ import {
   WhatsAppContainer,
   ClinicInfo,
   PhoneWhatsApp,
+  ClinicBorder,
 } from './styles';
 
 // interface IUpload {
@@ -26,15 +27,7 @@ import {
 //   servicosDisponiveis: string;
 // }
 
-const useStyles = makeStyles({
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  },
-});
-
 const ClinicViewer: React.FC = () => {
-  const classes = useStyles();
-
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
   const readxls = useCallback(
@@ -89,6 +82,10 @@ const ClinicViewer: React.FC = () => {
           )} */}
           <GridCard item>
             <ClinicCard>
+              <ClinicBorder>
+                <span>CLINICA</span>
+              </ClinicBorder>
+
               <ClinicInfo>
                 <h2>EHS SOLUÇÕES INTELIGENTES</h2>
                 <div>
@@ -96,14 +93,10 @@ const ClinicViewer: React.FC = () => {
                   <span>contato@ehsss.com.br</span>
                 </div>
                 <AvailableServices>
-                  <ChipService
-                    icon={<Face />}
-                    label="EXAMES CLINICOS"
-                    deleteIcon={<Done />}
-                  />
-                  <ChipService icon={<Face />} label="EXAMES COMPLEMENTARES" />
-                  <ChipService icon={<Face />} label="PPRA" color="primary" />
-                  <ChipService icon={<Face />} label="PCMSO" color="primary" />
+                  <ChipService icon={<Mood />} label="EXAMES CLINICOS" />
+                  <ChipService icon={<Mood />} label="EXAMES COMPLEMENTARES" />
+                  <ChipService icon={<Mood />} label="PPRA" />
+                  <ChipService icon={<Mood />} label="PCMSO" />
                 </AvailableServices>
               </ClinicInfo>
 
@@ -112,7 +105,6 @@ const ClinicViewer: React.FC = () => {
                   <WhatsApp />
                   <span>WhatsApp</span>
                 </div>
-
                 <PhoneWhatsApp>
                   <h2>(11) 92477-9755</h2>
                 </PhoneWhatsApp>

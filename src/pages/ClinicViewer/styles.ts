@@ -35,20 +35,42 @@ export const ClinicCard = styled(Card)`
   display: flex;
   margin: 10px 0;
   min-height: 150px;
-  min-width: 900px;
-  padding: 20px 0 0 30px;
+  min-width: 1000px;
   border-radius: 10px;
+`;
+
+export const ClinicBorder = styled.div`
+  display: flex;
+  background: #00ced1;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 27px;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  border-radius: 10px;
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+  }
 `;
 
 export const ClinicInfo = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 25px 0 0 0;
+
+  h2 {
+    font-weight: 600;
+  }
 
   > div {
     display: flex;
 
     > span {
-      margin: 5px 30px 0 0;
+      margin: 6px 30px 0 0;
       color: #808080;
     }
   }
@@ -64,7 +86,7 @@ export const AvailableServices = styled.div`
 `;
 
 export const ChipService = styled(Chip)`
-  background-color: #3fb563;
+  background-color: #49b4d4;
   color: #fff;
   font-weight: bolder;
 
@@ -78,15 +100,24 @@ export const WhatsAppContainer = styled(Button)`
   flex: 1;
   width: 200px;
   height: 110px;
-  margin: 5px 30px 0 25px;
-  background-color: #49b4d4;
+  margin: 30px 30px 0 25px;
+  padding: 5px 0 0 0;
+  background-color: #169632;
   border-radius: 15px;
+  transition: all 0.5s;
+
+  :hover {
+    background-color: #3fb563;
+    padding-right: 30px;
+    transition: 0.5s;
+  }
 
   span {
     display: flex;
     flex-direction: column;
+    transition: 0.5s;
 
-    div {
+    > div {
       display: flex;
       flex-direction: row;
       color: #fff;
@@ -100,10 +131,9 @@ export const WhatsAppContainer = styled(Button)`
 
 export const PhoneWhatsApp = styled.div`
   display: flex;
-  flex: 1;
   flex-direction: row;
-  padding-top: 15px;
   color: #fff;
+  padding-top: 5px;
 `;
 
 export const UploadContainer = styled.div`
