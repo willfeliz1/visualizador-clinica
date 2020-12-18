@@ -1,5 +1,5 @@
-import { AppBar, Typography } from '@material-ui/core';
-import { Mood, WhatsApp } from '@material-ui/icons';
+import { AppBar, Button, FormControl, Typography } from '@material-ui/core';
+import { ArrowDropDown, Mood, SortByAlpha, WhatsApp } from '@material-ui/icons';
 import React, { useCallback, useState } from 'react';
 import XLSX from 'xlsx';
 import {
@@ -16,6 +16,8 @@ import {
   ClinicInfo,
   PhoneWhatsApp,
   ClinicBorder,
+  SettingsDiv,
+  SortAlphabeticalButton,
 } from './styles';
 
 // interface IUpload {
@@ -27,8 +29,14 @@ import {
 //   servicosDisponiveis: string;
 // }
 
+interface ISortByAlpha {
+  ordem: 'Acrescente' | 'Decrescente' | 'Nenhum';
+}
+
 const ClinicViewer: React.FC = () => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [sortByAlpha, setSortByAlpha] = useState<ISortByAlpha>();
 
   const readxls = useCallback(
     file => {
@@ -61,7 +69,16 @@ const ClinicViewer: React.FC = () => {
     <Container>
       <AppBar position="absolute">
         <ToolBar>
-          <Typography variant="h6">Visualizador de Clinicas</Typography>
+          <Typography variant="h5">Visualizador de Clinicas</Typography>
+
+          <SettingsDiv>
+            <SortAlphabeticalButton
+              startIcon={<SortByAlpha />}
+              endIcon={<ArrowDropDown />}
+            >
+              <Typography variant="button">Ordenar</Typography>
+            </SortAlphabeticalButton>
+          </SettingsDiv>
         </ToolBar>
       </AppBar>
       <Main>
@@ -106,7 +123,7 @@ const ClinicViewer: React.FC = () => {
                   <span>WhatsApp</span>
                 </div>
                 <PhoneWhatsApp>
-                  <h2>(11) 92477-9755</h2>
+                  <h1>(11) 91477-9755</h1>
                 </PhoneWhatsApp>
               </WhatsAppContainer>
             </ClinicCard>

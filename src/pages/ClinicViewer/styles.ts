@@ -1,5 +1,6 @@
-import { Button, Card, Chip, Grid, Toolbar } from '@material-ui/core';
 import styled from 'styled-components';
+
+import { Button, Card, Chip, Grid, Toolbar } from '@material-ui/core';
 
 export const Container = styled.div`
   display: flex;
@@ -7,13 +8,40 @@ export const Container = styled.div`
 
 export const ToolBar = styled(Toolbar)`
   display: flex;
-  justify-content: center;
   background-color: #9932cc;
+
+  h5 {
+    position: absolute;
+    width: 100%;
+    padding-left: 40%;
+  }
+`;
+
+export const SettingsDiv = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 200px;
+  height: 35px;
+  margin-right: 10%;
+  padding-top: 0.8px;
+`;
+
+export const SortAlphabeticalButton = styled(Button)`
+  && {
+    color: #fff;
+    border: 1;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const Main = styled.main`
   flex-grow: 1;
-
   padding: 75px 5px 5px;
 `;
 
@@ -28,15 +56,16 @@ export const GridCard = styled(Grid)`
   align-items: center;
   width: 100%;
   height: 100vh;
-  border-radius: 5px;
 `;
 
 export const ClinicCard = styled(Card)`
-  display: flex;
-  margin: 10px 0;
-  min-height: 150px;
-  min-width: 1000px;
-  border-radius: 10px;
+  && {
+    display: flex;
+    margin: 10px 0;
+    min-height: 150px;
+    min-width: 1000px;
+    border-radius: 9px;
+  }
 `;
 
 export const ClinicBorder = styled.div`
@@ -48,7 +77,7 @@ export const ClinicBorder = styled.div`
   margin-right: 27px;
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
-  border-radius: 10px;
+  border-radius: 5px;
 
   span {
     font-size: 20px;
@@ -86,44 +115,48 @@ export const AvailableServices = styled.div`
 `;
 
 export const ChipService = styled(Chip)`
-  background-color: #49b4d4;
-  color: #fff;
-  font-weight: bolder;
-
-  svg {
+  && {
+    background: #3fb563;
     color: #fff;
+    font-weight: bolder;
+
+    svg {
+      color: #fff;
+    }
   }
 `;
 
 export const WhatsAppContainer = styled(Button)`
-  display: flex;
-  flex: 1;
-  width: 200px;
-  height: 110px;
-  margin: 30px 30px 0 25px;
-  padding: 5px 0 0 0;
-  background-color: #169632;
-  border-radius: 15px;
-  transition: all 0.5s;
-
-  :hover {
-    background-color: #3fb563;
-    padding-right: 30px;
-    transition: 0.5s;
-  }
-
-  span {
+  && {
     display: flex;
-    flex-direction: column;
-    transition: 0.5s;
+    flex: 1;
+    width: 200px;
+    height: 110px;
+    margin: 30px 30px 0 25px;
+    padding: 5px 0 0 0;
+    background: #49b4e3;
+    border-radius: 15px;
+    transition: all 0.5s;
 
-    > div {
+    :hover {
+      background-color: #49b4d4;
+      padding-right: 30px;
+      transition: 0.5s;
+    }
+
+    span {
       display: flex;
-      flex-direction: row;
-      color: #fff;
+      flex-direction: column;
+      transition: 0.5s;
 
-      svg {
-        margin-right: 5px;
+      > div {
+        display: flex;
+        flex-direction: row;
+        color: #fff;
+
+        svg {
+          margin-right: 5px;
+        }
       }
     }
   }
