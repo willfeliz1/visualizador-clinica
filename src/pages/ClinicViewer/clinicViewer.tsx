@@ -1,14 +1,17 @@
+import React, { useCallback, useEffect, useState } from 'react';
+
 import { AppBar, Typography } from '@material-ui/core';
 import {
   Add,
   ArrowDropDown,
   Mood,
+  SentimentDissatisfied,
   SortByAlpha,
   WhatsApp,
 } from '@material-ui/icons';
-import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import XLSX from 'xlsx';
+import database from '../../database/database.json';
 import {
   ToolBar,
   Container,
@@ -28,14 +31,19 @@ import {
   AddButton,
 } from './styles';
 
-// interface IUpload {
-//   nome: string;
-//   endereco: string;
-//   cep: string;
-//   email: string;
-//   whatsapp: string;
-//   servicosDisponiveis: string;
-// }
+interface IClinic {
+  nome: string;
+  endereco: string;
+  cep: string;
+  email?: string;
+  whatsapp: string;
+  servicosdisponiveis: {
+    examesclinicos: boolean;
+    examescomplementares: boolean;
+    ppra: boolean;
+    pcmso: boolean;
+  };
+}
 
 interface ISortByAlpha {
   ordem: 'Acrescente' | 'Decrescente' | 'Nenhum';
@@ -45,6 +53,11 @@ const ClinicViewer: React.FC = () => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [open, setOpen] = useState(false);
   const [sortByAlpha, setSortByAlpha] = useState<ISortByAlpha>();
+  const [clinics, setClinics] = useState<IClinic[]>([]);
+
+  useEffect(() => {
+    setClinics(database.ListaDeClinicas);
+  }, []);
 
   const readxls = useCallback(
     file => {
@@ -106,64 +119,79 @@ const ClinicViewer: React.FC = () => {
             </UploadContainer>
           )} */}
           <GridCard item>
-            <ClinicCard>
-              <ClinicBorder>
-                <span>CLINICA</span>
-              </ClinicBorder>
+            {clinics.map(clinic => (
+              <ClinicCard>
+                <ClinicBorder>
+                  <span>CLINICA</span>
+                </ClinicBorder>
 
-              <ClinicInfo>
-                <h2>EHS SOLUÇÕES INTELIGENTES</h2>
-                <div>
-                  <span>04602-002</span>
-                  <span>contato@ehsss.com.br</span>
-                </div>
-                <AvailableServices>
-                  <ChipService icon={<Mood />} label="EXAMES CLINICOS" />
-                  <ChipService icon={<Mood />} label="EXAMES COMPLEMENTARES" />
-                  <ChipService icon={<Mood />} label="PPRA" />
-                  <ChipService icon={<Mood />} label="PCMSO" />
-                </AvailableServices>
-              </ClinicInfo>
+                <ClinicInfo>
+                  <h2>{clinic.nome}</h2>
+                  <div>
+                    <span>{clinic.cep}</span>
+                    <span>{clinic.email}</span>
+                  </div>
+                  <AvailableServices>
+                    <ChipService
+                      icon={
+                        clinic.servicosdisponiveis.examesclinicos ? (
+                          <Mood />
+                        ) : (
+                          <SentimentDissatisfied />
+                        )
+                      }
+                      label="EXAMES CLINICOS"
+                      isAllowed={clinic.servicosdisponiveis.examesclinicos}
+                    />
+                    <ChipService
+                      icon={
+                        clinic.servicosdisponiveis.examescomplementares ? (
+                          <Mood />
+                        ) : (
+                          <SentimentDissatisfied />
+                        )
+                      }
+                      label="EXAMES COMPLEMENTARES"
+                      isAllowed={
+                        clinic.servicosdisponiveis.examescomplementares
+                      }
+                    />
+                    <ChipService
+                      icon={
+                        clinic.servicosdisponiveis.ppra ? (
+                          <Mood />
+                        ) : (
+                          <SentimentDissatisfied />
+                        )
+                      }
+                      label="PPRA"
+                      isAllowed={clinic.servicosdisponiveis.ppra}
+                    />
+                    <ChipService
+                      icon={
+                        clinic.servicosdisponiveis.pcmso ? (
+                          <Mood />
+                        ) : (
+                          <SentimentDissatisfied />
+                        )
+                      }
+                      label="PCMSO"
+                      isAllowed={clinic.servicosdisponiveis.pcmso}
+                    />
+                  </AvailableServices>
+                </ClinicInfo>
 
-              <WhatsAppContainer>
-                <div>
-                  <WhatsApp />
-                  <span>WhatsApp</span>
-                </div>
-                <PhoneWhatsApp>
-                  <h1>(11) 91477-9755</h1>
-                </PhoneWhatsApp>
-              </WhatsAppContainer>
-            </ClinicCard>
-            <ClinicCard>
-              <ClinicBorder>
-                <span>CLINICA</span>
-              </ClinicBorder>
-
-              <ClinicInfo>
-                <h2>EHS SOLUÇÕES INTELIGENTES</h2>
-                <div>
-                  <span>04602-002</span>
-                  <span>contato@ehsss.com.br</span>
-                </div>
-                <AvailableServices>
-                  <ChipService icon={<Mood />} label="EXAMES CLINICOS" />
-                  <ChipService icon={<Mood />} label="EXAMES COMPLEMENTARES" />
-                  <ChipService icon={<Mood />} label="PPRA" />
-                  <ChipService icon={<Mood />} label="PCMSO" />
-                </AvailableServices>
-              </ClinicInfo>
-
-              <WhatsAppContainer>
-                <div>
-                  <WhatsApp />
-                  <span>WhatsApp</span>
-                </div>
-                <PhoneWhatsApp>
-                  <h1>(11) 91477-9755</h1>
-                </PhoneWhatsApp>
-              </WhatsAppContainer>
-            </ClinicCard>
+                <WhatsAppContainer>
+                  <div>
+                    <WhatsApp />
+                    <span>WhatsApp</span>
+                  </div>
+                  <PhoneWhatsApp>
+                    <h1>{clinic.whatsapp}</h1>
+                  </PhoneWhatsApp>
+                </WhatsAppContainer>
+              </ClinicCard>
+            ))}
           </GridCard>
         </GridContainer>
 
