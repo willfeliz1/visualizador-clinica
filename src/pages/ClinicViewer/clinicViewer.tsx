@@ -7,6 +7,7 @@ import {
   WhatsApp,
 } from '@material-ui/icons';
 import React, { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
 import XLSX from 'xlsx';
 import {
   ToolBar,
@@ -166,9 +167,11 @@ const ClinicViewer: React.FC = () => {
           </GridCard>
         </GridContainer>
 
-        <AddButton>
-          <Add />
-        </AddButton>
+        <Link to="/clinic/create">
+          <AddButton>
+            <Add />
+          </AddButton>
+        </Link>
       </Main>
     </Container>
   );
