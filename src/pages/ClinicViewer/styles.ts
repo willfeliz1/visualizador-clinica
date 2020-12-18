@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Button, Card, Chip, Fab, Grid, Toolbar } from '@material-ui/core';
+
+interface ChipServiceProps {
+  isAllowed: boolean;
+}
 
 export const Container = styled.div``;
 
@@ -112,7 +116,7 @@ export const AvailableServices = styled.div`
   }
 `;
 
-export const ChipService = styled(Chip)`
+export const ChipService = styled(Chip)<ChipServiceProps>`
   && {
     background: #3fb563;
     color: #fff;
@@ -121,6 +125,15 @@ export const ChipService = styled(Chip)`
     svg {
       color: #fff;
     }
+
+    ${props =>
+      props.isAllowed
+        ? css`
+            background: #3fb563;
+          `
+        : css`
+            background: #a5a5a5;
+          `}
   }
 `;
 
