@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 
-import { Button, Card, Chip, Grid, Toolbar } from '@material-ui/core';
+import { Button, Card, Chip, Fab, Grid, Toolbar } from '@material-ui/core';
 
-export const Container = styled.div`
-  display: flex;
-`;
+export const Container = styled.div``;
 
 export const ToolBar = styled(Toolbar)`
   display: flex;
   background-color: #9932cc;
 
   h5 {
-    position: absolute;
+    position: relative;
     width: 100%;
     padding-left: 40%;
   }
@@ -46,7 +44,7 @@ export const Main = styled.main`
 `;
 
 export const GridContainer = styled(Grid)`
-  height: 100vh;
+  height: 100%;
   justify-content: center;
 `;
 
@@ -55,13 +53,13 @@ export const GridCard = styled(Grid)`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 export const ClinicCard = styled(Card)`
   && {
     display: flex;
-    margin: 10px 0;
+    margin: 10px 0 20px;
     min-height: 150px;
     min-width: 1000px;
     border-radius: 9px;
@@ -167,6 +165,23 @@ export const PhoneWhatsApp = styled.div`
   flex-direction: row;
   color: #fff;
   padding-top: 5px;
+`;
+
+export const AddButton = styled(Fab)`
+  && {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0 3% 3% 0;
+    background-color: #49b4d4;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+
+    :hover {
+      background-color: #3285cc;
+    }
+  }
 `;
 
 export const UploadContainer = styled.div`

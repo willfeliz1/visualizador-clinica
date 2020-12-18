@@ -1,5 +1,11 @@
-import { AppBar, Button, FormControl, Typography } from '@material-ui/core';
-import { ArrowDropDown, Mood, SortByAlpha, WhatsApp } from '@material-ui/icons';
+import { AppBar, Typography } from '@material-ui/core';
+import {
+  Add,
+  ArrowDropDown,
+  Mood,
+  SortByAlpha,
+  WhatsApp,
+} from '@material-ui/icons';
 import React, { useCallback, useState } from 'react';
 import XLSX from 'xlsx';
 import {
@@ -18,6 +24,7 @@ import {
   ClinicBorder,
   SettingsDiv,
   SortAlphabeticalButton,
+  AddButton,
 } from './styles';
 
 // interface IUpload {
@@ -128,57 +135,40 @@ const ClinicViewer: React.FC = () => {
               </WhatsAppContainer>
             </ClinicCard>
             <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
-            </ClinicCard>
-            <ClinicCard>
-              <div>
-                <h3>NOME DA CLINICA</h3>
-              </div>
+              <ClinicBorder>
+                <span>CLINICA</span>
+              </ClinicBorder>
+
+              <ClinicInfo>
+                <h2>EHS SOLUÇÕES INTELIGENTES</h2>
+                <div>
+                  <span>04602-002</span>
+                  <span>contato@ehsss.com.br</span>
+                </div>
+                <AvailableServices>
+                  <ChipService icon={<Mood />} label="EXAMES CLINICOS" />
+                  <ChipService icon={<Mood />} label="EXAMES COMPLEMENTARES" />
+                  <ChipService icon={<Mood />} label="PPRA" />
+                  <ChipService icon={<Mood />} label="PCMSO" />
+                </AvailableServices>
+              </ClinicInfo>
+
+              <WhatsAppContainer>
+                <div>
+                  <WhatsApp />
+                  <span>WhatsApp</span>
+                </div>
+                <PhoneWhatsApp>
+                  <h1>(11) 91477-9755</h1>
+                </PhoneWhatsApp>
+              </WhatsAppContainer>
             </ClinicCard>
           </GridCard>
         </GridContainer>
+
+        <AddButton>
+          <Add />
+        </AddButton>
       </Main>
     </Container>
   );
