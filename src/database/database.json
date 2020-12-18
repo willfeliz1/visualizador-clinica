@@ -1,0 +1,133 @@
+{
+  "ListaDeClinicas": [
+      {
+          "nome": "EHS SOLUÇÕES INTELIGENTES",
+          "endereco": "Rua Barão do Triunfo, 612 / CJ 901",
+          "cep": "04602-002",
+          "email": "contato@ehsss.com.br",
+          "whatsapp": "(11) 93477-9755",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": true,
+            "ppra": true,
+            "pcmso": true
+          }
+      },
+      {
+          "nome": "SA ASSESSORIA",
+          "endereco": "Rua Joaquim Guarani, 105",
+          "cep": "04707-060",
+          "email": "selma@saassessoria.com.br",
+          "whatsapp": "(11) 95182-8221",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": false,
+            "ppra": false,
+            "pcmso": true
+          }
+      },
+      {
+          "nome": "GEREMED SAUDE E SEGURANCA OCUPACIONAL",
+          "endereco": "Rua do Estilo Barroco, 452",
+          "cep": "04709-011",
+          "email": "nubia@geremed.com.br",
+          "whatsapp": "(11) 95536-9651",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": false,
+            "ppra": true,
+            "pcmso": true
+          }
+      },
+      {
+          "nome": "CEMIP SAUDE",
+          "endereco": "AV. ADOLFO PINHEIRO, 2464 / 3º ANDAR SALA 31",
+          "cep": "04734-902",
+          "email": "cemip@cemip.com.br",
+          "whatsapp": "(11) 95521-1900",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": true,
+            "ppra": false,
+            "pcmso": false
+          }
+      },
+      {
+          "nome": "OCUPACIONAL SS SAÚDE E SEGURANÇA DO TRABALHO",
+          "endereco": "Rua Francisco Romeiro Sobrinho, 141",
+          "cep": "04710-180",
+          "email": "cleiton@ocupacionalss.com.br",
+          "whatsapp": "(11) 95181-0102",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": true,
+            "ppra": true,
+            "pcmso": true
+          }
+      },
+      {
+          "nome": "GBEN - GESTAO DE BENEFICIOS OCUPACIONAIS",
+          "endereco": "Rua Enxovia, 472 / Conj 2009",
+          "cep": "04711-030",
+          "email": "VANESSA@GBEN.COM.BR",
+          "whatsapp": "(11) 92776-2700",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": true,
+            "ppra": true,
+            "pcmso": true
+          }
+      },
+      {
+          "nome": "GRUPO MORATTI",
+          "endereco": "Rua Francisco de Morais, 219",
+          "cep": "04714-010",
+          "emailAPP": "(11) 93567-8031",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": false,
+            "ppra": false,
+            "pcmso": false
+          }
+      },
+      {
+          "nome": "HEALTH MANAGER",
+          "endereco": "Rua Indiana, 1148 / Conj 02",
+          "cep": "04562-002",
+          "email": "comercial1@healthmanager.com.br",
+          "whatsapp": "(11) 95091-7416",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": true,
+            "ppra": true,
+            "pcmso": true
+          }
+      },
+      {
+          "nome": "S&MED CONSULTORIA E GESTAO DE SSO",
+          "endereco": "Avenida Engenheiro Luiz Carlos Berrini, 1140",
+          "cep": "04571-000",
+          "email": "CONTATO@SMEDGESTAO.COM.BR",
+          "whatsapp": "(11) 94280-8636",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": false,
+            "ppra": false,
+            "pcmso": false
+          }
+      },
+      {
+          "nome": "MANTRIS",
+          "endereco": "Avenida das Nações Unidas, 11633 / 7º Andar",
+          "cep": "04578-000",
+          "email": "credenciamento@mantris.com.br",
+          "whatsapp": "(11) 92141-8000",
+          "servicosdisponiveis": {
+            "examesclinicos": true,
+            "examescomplementares": false,
+            "ppra": true,
+            "pcmso": true
+          }
+      }
+  ]
+}
