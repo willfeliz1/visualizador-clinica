@@ -82,7 +82,8 @@
           "nome": "GRUPO MORATTI",
           "endereco": "Rua Francisco de Morais, 219",
           "cep": "04714-010",
-          "emailAPP": "(11) 93567-8031",
+          "email": "",
+          "whatsapp": "(11) 93567-8031",
           "servicosdisponiveis": {
             "examesclinicos": true,
             "examescomplementares": false,
@@ -124,7 +125,7 @@
           "whatsapp": "(11) 92141-8000",
           "servicosdisponiveis": {
             "examesclinicos": true,
-            "examescomplementares": false,
+            "examescomplementares": true,
             "ppra": true,
             "pcmso": true
           }

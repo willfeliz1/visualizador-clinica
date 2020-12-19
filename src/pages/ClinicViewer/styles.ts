@@ -1,6 +1,14 @@
 import styled, { css } from 'styled-components';
 
-import { Button, Card, Chip, Fab, Grid, Toolbar } from '@material-ui/core';
+import {
+  Button,
+  Card,
+  Chip,
+  Fab,
+  Grid,
+  Select,
+  Toolbar,
+} from '@material-ui/core';
 
 interface ChipServiceProps {
   isAllowed: boolean;
@@ -41,6 +49,8 @@ export const SortAlphabeticalButton = styled(Button)`
     height: 25px;
   }
 `;
+
+export const SelectInput = styled(Select)``;
 
 export const Main = styled.main`
   flex-grow: 1;

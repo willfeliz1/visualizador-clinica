@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import {
   AppBar,
@@ -38,6 +38,7 @@ import {
   SortAlphabeticalButton,
   AddButton,
 } from './styles';
+import { ClinicContext } from '../../Hooks/ClinicContext';
 
 interface IClinic {
   nome: string;
@@ -58,12 +59,14 @@ const ClinicViewer: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [sortByAlpha, setSortByAlpha] = useState<string | number>('Nenhum');
   const [clinics, setClinics] = useState<IClinic[]>([]);
-  const [orderedClinics, setOrderedClinics] = useState<IClinic[]>([]);
+
+  const { clinicsStorage } = useContext(ClinicContext);
+
+  console.log(clinicsStorage);
 
   useEffect(() => {
-    setClinics(database.ListaDeClinicas);
-    setOrderedClinics(database.ListaDeClinicas);
-  }, [clinics]);
+    setClinics(clinicsStorage);
+  }, [clinicsStorage]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -72,10 +75,6 @@ const ClinicViewer: React.FC = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-  function compareNumbers(a: any, b: any) {
-    return a - b;
-  }
 
   function compare(a: any, b: any) {
     if (a.nome < b.nome) {

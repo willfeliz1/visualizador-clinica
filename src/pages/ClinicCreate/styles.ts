@@ -47,6 +47,10 @@ export const GridContainer = styled(Grid)`
     padding: 64px 80px;
     overflow: hidden;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const GridInputContainer = styled(Grid)`
